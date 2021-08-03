@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+body {
+  max-width: 1400px;
+  margin: 10px auto;
+}
+.container {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 85% 5%;
+  grid-template-areas:
+    "form image"
+    "form moto";
+}
+.container__img {
+  grid-area: image;
+  width: 100%;
+}
+.container__img > img {
+  width: 100%;
+  object-fit: cover;
+}
+.container__moto {
+  grid-area: moto;
+  text-align: center;
+}
+.container__moto > h1 {
+  font-size: 35px;
+}
+.container__moto > h1 > b {
+  color: rgb(255, 0, 119);
+}
+form {
+  grid-area: form;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 30px;
+}
+label {
+  margin-top: 20px;
+  font-size: 21px;
+  font-weight: 600;
+  color: rgb(31, 31, 31);
+}
+#name {
+  text-transform: capitalize;
+}
+input[type="text"] {
+  width: 65%;
+  min-width: 300px;
+  margin-top: 3px;
+  padding: 5px;
+  font-size: 19px;
+  border: none;
+  border: 1px solid rgb(95, 95, 95);
+  border-radius: 3px;
+}
+input[type="radio"] {
+  margin-top: 5px;
+  margin-right: 10px;
+}
+input[type="checkbox"] {
+  margin-top: 5px;
+  margin-right: 10px;
+}
+.stacks > label {
+  font-size: 17px;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+}
+.genders > label {
+  font-size: 17px;
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+}
+.btn-group {
+  display: flex;
+  justify-content: flex-start;
+}
+.btn {
+  border: none;
+  background-color: transparent;
+  margin-top: 30px;
+  font-size: 16px;
+  border: 1px solid black;
+  padding: 3px 7px;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  margin-right: 10px;
+}
+.btn:hover {
+  cursor: pointer;
+}
+form p {
+  margin-top: 3px;
+  font-size: 14px;
+  font-weight: 600;
+  width: max-content;
+  padding: 0px 8px;
+  background-color: rgb(246, 238, 238);
+  color: rgb(255, 0, 0);
+}
+@media all and (max-width: 900px) {
+  .container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 200px 50px auto;
+    grid-template-areas:
+      "image"
+      "moto"
+      "form";
+    margin: 20px;
+  }
+  .container__img > img {
+    display: block;
+    margin: 0px auto;
+    width: 40%;
+    min-width: 300px;
+    object-fit: cover;
+  }
+  .container__moto > h1 {
+    font-size: 27px;
+    margin-top: 0px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  form {
+    width: 100%;
+    padding: 20px 10px;
+    border: none;
+  }
+  input[type="text"] {
+    width: 100%;
+    max-width: 400px;
+    min-width: 200px;
+  }
+}
